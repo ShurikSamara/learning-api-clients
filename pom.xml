@@ -46,7 +46,10 @@
         <!--  Plugin  -->
         <!--  Maven Surefire  -->
         <maven-surefire.version>3.5.2</maven-surefire.version>
-        <aspectjweaver.version>1.9.22</aspectjweaver.version>
+        <!--  Allure Maven Plugin  -->
+        <allure-maven.version>2.14.0</allure-maven.version>
+        <!--  AspectJ  -->
+        <aspectj.version>1.9.22</aspectj.version>
     </properties>
     <dependencies>
         <!--  Lombok  -->
@@ -172,14 +175,22 @@
                 <version>${maven-surefire.version}</version>
                 <configuration>
                     <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver.version}/aspectjweaver-${aspectjweaver.version}.jar"
+                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
                     </argLine>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure-maven.version}</version>
+                <configuration>
+                    <reportVersion>${allure.version}</reportVersion>
                 </configuration>
                 <dependencies>
                     <dependency>
                         <groupId>org.aspectj</groupId>
                         <artifactId>aspectjweaver</artifactId>
-                        <version>${aspectjweaver.version}</version>
+                        <version>${aspectj.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
