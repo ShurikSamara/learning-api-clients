@@ -34,9 +34,9 @@
         <!--  Allure REST Assured  -->
         <allure.version>2.32.0</allure.version>
         <!--  JUnit 5  -->
-        <junit.version>5.14.3</junit.version>
+        <junit.version>5.11.4</junit.version>
         <!--  JUnit Platform Suite  -->
-        <junit-platform-suite.version>1.14.3</junit-platform-suite.version>
+        <junit-platform-suite.version>1.11.4</junit-platform-suite.version>
         <!--  AssertJ  -->
         <assertj.version>3.27.7</assertj.version>
         <!--  JWT parsing (для валидации JWT токенов)  -->
@@ -171,11 +171,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire.version}</version>
-                <configuration>
-                    <argLine>
-                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
-                    </argLine>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>io.qameta.allure</groupId>
