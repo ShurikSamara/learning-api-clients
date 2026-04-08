@@ -46,6 +46,7 @@
         <!--  Plugin  -->
         <!--  Maven Surefire  -->
         <maven-surefire.version>3.5.2</maven-surefire.version>
+        <aspectjweaver.version>1.9.22</aspectjweaver.version>
     </properties>
     <dependencies>
         <!--  Lombok  -->
@@ -120,6 +121,13 @@
             <version>${allure.version}</version>
             <scope>test</scope>
         </dependency>
+        <!--  Allure JUnit 5  -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit5</artifactId>
+            <version>${allure.version}</version>
+            <scope>test</scope>
+        </dependency>
         <!--  JUnit 5  -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -162,6 +170,18 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire.version}</version>
+                <configuration>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver.version}/aspectjweaver-${aspectjweaver.version}.jar"
+                    </argLine>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectjweaver.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
