@@ -1,0 +1,34 @@
+<div>POST to https://www.dataaccess.com/webservicesserver/NumberConversion.wso</div>
+
+    <h4>Body</h4>
+    <div>
+    <pre class="preformated-text">
+&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+  &lt;soap:Body&gt;
+    &lt;NumberToWords xmlns=&quot;http://www.dataaccess.com/webservicesserver/&quot;&gt;
+      &lt;ubiNum&gt;42&lt;/ubiNum&gt;
+    &lt;/NumberToWords&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;    </pre>
+    </div>
+
+    <h4>Headers</h4>
+    <div>
+            <div>SOAPAction: http://www.dataaccess.com/webservicesserver/NumberToWords</div>
+            <div>Accept: application/json, application/javascript, text/javascript, text/json</div>
+            <div>Content-Type: text/xml; charset=utf-8</div>
+    </div>
+
+
+
+    <h4>Curl</h4>
+    <div>
+        curl -v -X POST &#39;https://www.dataaccess.com/webservicesserver/NumberConversion.wso&#39; -H &#39;SOAPAction: http://www.dataaccess.com/webservicesserver/NumberToWords&#39; -H &#39;Accept: application/json, application/javascript, text/javascript, text/json&#39; -H &#39;Content-Type: text/xml; charset=utf-8&#39; -d &#39;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+  &lt;soap:Body&gt;
+    &lt;NumberToWords xmlns=&quot;http://www.dataaccess.com/webservicesserver/&quot;&gt;
+      &lt;ubiNum&gt;42&lt;/ubiNum&gt;
+    &lt;/NumberToWords&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;&#39;
+    </div>
+
