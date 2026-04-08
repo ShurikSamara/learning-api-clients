@@ -21,9 +21,6 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Download dependencies
-        run: mvn -B dependency:resolve --file pom.xml
-
       - name: Run tests
         run: mvn -B test --file pom.xml
 
