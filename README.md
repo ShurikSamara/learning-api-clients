@@ -65,7 +65,7 @@
 1. **Клонируйте репозиторий:**
    ```bash
    git clone <your-repo-url>
-   cd test-project-3
+   cd leaning-api-clients
    ```
 2. **Соберите проект:**
    ```bash
